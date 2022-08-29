@@ -514,7 +514,7 @@ await sleep(ms(waktu))
 diablobotwhatsapp.reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Dengan Timer ${waktu}`)
 }
 break
-case 'p':
+case 'test':
 diablobotwhatsapp.reply('on bang')
 break
 case 'bug1': {
