@@ -303,20 +303,6 @@ var yeye = await fetchJson("https://kirbotz-api.herokuapp.com/api/random/cecan?a
 kayla.sendMessage(from,{image:{url:yeye.result.url},caption: `${mess.succes}`}, { quoted: kaylabotwhatsapp } )
 }
 break
-case 'ttp':
-if (args.length == 0) return kaylabotwhatsapp.reply(`Contoh: ${prefix + command} Hai`)
-let ka = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${q}`)
-kirbotz.sendMessage(from, { sticker: gehdhe, contextInfo: {
-"mentionedJid": [sender],
-"externalAdReply": {
-"showAdAttribution": true,
-"title": `Hai Kak ${pushname}`, 
-"mediaType": 2, 
-"thumbnail": ppnyauser,
-"previewType": "VIDEO",
-"mediaUrl": 'https://www.facebook.com/100025728849863/posts/pfbid02rFELgSdLzgDNmK9NQAwTm1VNrfH3sXtid3xPKCjv376c5YxWE3aQDjiBcYnAS3vl/?app=fbl',
-"sourceUrl": 'https://www.facebook.com/100025728849863/posts/pfbid02rFELgSdLzgDNmK9NQAwTm1VNrfH3sXtid3xPKCjv376c5YxWE3aQDjiBcYnAS3vl/?app=fbl'}}}, { quoted: kaylabotwhatsapp })
-break
 case 'attp':
 if (args.length == 0) return kaylabotwhatsapp.reply(`Contoh: ${prefix + command} Hai`)
 gehdhe = await getBuffer(`https://api.xteam.xyz/${command}?file&text=${encodeURI(q)}`)
