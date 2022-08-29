@@ -241,10 +241,20 @@ jiren = `
 亗├ • ${prefix}bugvn
 亗├ • ${prefix}bugtext
 亗├─────────────────┈ 
+亗├ 「𝙊𝙏𝙃𝙀𝙍 𝙁𝙄𝙏𝙐𝙍𝙀」
+亗├ • ${prefix}attp ( text )
+亗├ • ${prefix}tiktok ( url )
+亗├ • ${prefix}sticker (reply image)
+亗├ • ${prefix}toimg ( reply sticker )
+亗├ • ${prefix}tourl (reply media)
+亗├ • ${prefix}sc
+亗├─────────────────┈ 
 `
 diablobotwhatsapp.reply(jiren)
 break
-
+case 'sc':
+diablobotwhatsapp.reply("SC TIDAK DI JUAL!!! tapi klo mau akses bot hub wa.me/6281220670449 harga terjangkau loo")
+break
 case 'cewek': case 'cecan': {
 var yeye = await fetchJson("https://kirbotz-api.herokuapp.com/api/random/cecan?apikey=KirBotz") 
 diablo.sendMessage(from,{image:{url:yeye.result.url},caption: `${mess.succes}`}, { quoted: diablobotwhatsapp } )
