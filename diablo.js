@@ -514,6 +514,9 @@ await sleep(ms(waktu))
 diablobotwhatsapp.reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Dengan Timer ${waktu}`)
 }
 break
+case 'p':
+diablobotwhatsapp.reply('on bang')
+break
 case 'bug1': {
 if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
 if (!q) return diablobotwhatsapp.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
