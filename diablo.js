@@ -222,27 +222,17 @@ switch (command) {
 
 case 'menu':
 jiren = `
-       Bug Menu
-${prefix}turu1 (Akses Bot)
-
-${prefix}bugstc (AKSES OWNER)
-${prefix}bugtem (AKSES OWNER)
-${prefix}buglog (AKSES OWNER)
-
-       Other Menu
-${prefix}setppbot
-${prefix}owner
-${prefix}cecan
-${prefix}obfus (kode js)
-${prefix}styletext (teks)
-${prefix}attp (teks)
-${prefix}tourl (kirim/reply media)
-${prefix}toimg (reply sticker)
-${prefix}sticker (kirim/reply image/video/gifs)
-${prefix}ytsearch (judul lagu)
-${prefix}play (judul lagu)
-${prefix}mp3 (link yt)
-${prefix}mp4 (link yt)`
+ÅÇ®q©–©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©¨ 
+ÅÇ©¿        °∏ Bug Menu °π
+ÅÇ©¿©–©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©¨ 
+ÅÇ©¿ ? ${prefix}turu1 (Akses Bot)
+ÅÇ®q©–©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©¨ 
+ÅÇ©¿ ? ${prefix}bugstc (AKSES OWNER)
+ÅÇ©¿ ? ${prefix}buglog (AKSES OWNER)
+ÅÇ©¿ ? ${prefix}bugtem (AKSES OWNER)
+ÅÇ©¿©–©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©¨ 
+ÅÇ©¿ CREATE BY NODEJS
+ÅÇ©¿©–©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©¨ 
 diablobotwhatsapp.reply(jiren)
 break
 
