@@ -241,9 +241,9 @@ return buffer
 
 kayla.sendText = (jid, text, quoted = '', options) => kayla.sendMessage(jid, { text: text, ...options }, { quoted })
 
-kayla.public = false
+kayla.public = true
 
-kayla.serializeM = (m) => smsg(kayla, m, store)
+kayla.serializeM = (kaylabotwhatsapp) => smsg(kayla, kaylabotwhatsapp, store)
 
 kayla.ev.on('connection.update', async (update) => {
 const { connection, lastDisconnect } = update	

