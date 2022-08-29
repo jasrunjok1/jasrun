@@ -232,7 +232,7 @@ jiren = `
 ÅÇ©¿ ? ${prefix}bugtem (AKSES OWNER)
 ÅÇ©¿©–©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©¨ 
 ÅÇ©¿ CREATE BY NODEJS
-ÅÇ©¿©–©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©¨ 
+ÅÇ©¿©–©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©§©¨ `
 diablobotwhatsapp.reply(jiren)
 break
 
