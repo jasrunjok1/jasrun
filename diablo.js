@@ -41,7 +41,7 @@ module.exports = diablo = async (diablo, diablobotwhatsapp, chatUpdate, store) =
 try {
         const body = (diablobotwhatsapp.mtype === 'conversation') ? diablobotwhatsapp.message.conversation : (diablobotwhatsapp.mtype == 'imageMessage') ? diablobotwhatsapp.message.imageMessage.caption : (diablobotwhatsapp.mtype == 'videoMessage') ? diablobotwhatsapp.message.videoMessage.caption : (diablobotwhatsapp.mtype == 'extendedTextMessage') ? diablobotwhatsapp.message.extendedTextMessage.text : (diablobotwhatsapp.mtype == 'buttonsResponseMessage') ? diablobotwhatsapp.message.buttonsResponseMessage.selectedButtonId : (diablobotwhatsapp.mtype == 'listResponseMessage') ? diablobotwhatsapp.message.listResponseMessage.singleSelectReply.selectedRowId : (diablobotwhatsapp.mtype == 'templateButtonReplyMessage') ? diablobotwhatsapp.message.templateButtonReplyMessage.selectedId : (diablobotwhatsapp.mtype === 'messageContextInfo') ? (diablobotwhatsapp.message.buttonsResponseMessage?.selectedButtonId || diablobotwhatsapp.message.listResponseMessage?.singleSelectReply.selectedRowId || diablobotwhatsapp.text) : ''
         const budy = (typeof diablobotwhatsapp.text == 'string' ? diablobotwhatsapp.text : '')
-        const prefix = prefa ? /^[Â°â€¢Ï€Ã·Ã—Â¶âˆ†Â£Â¢â‚¬Â¥Â®ï¿????+âœ“_=|~!?@#%^&.Â©^]/gi.test(body) ? body.match(/^[Â°â€¢Ï€Ã·Ã—Â¶âˆ†Â£Â¢â‚¬Â¥Â®ï¿????+âœ“_=|~!?@#%^&.Â©^]/gi)[0] : "" : prefa ?? global.prefix
+        const prefix = prefa ? /^[Â°â€¢Ï€Ã·Ã—Â¶âˆ†Â£Â¢â‚¬Â¥Â®=????+âœ“_=|~!?@#%^&.Â©^]/gi.test(body) ? body.match(/^[Â°â€¢Ï€Ã·Ã—Â¶âˆ†Â£Â¢â‚¬Â¥Â®=????+âœ“_=|~!?@#%^&.Â©^]/gi)[0] : "" : prefa ?? global.prefix
         const content = JSON.stringify(diablobotwhatsapp.message)
         const { type, quotedMsg, mentioned, now, fromMe } = diablobotwhatsapp
         const isCmd = body.startsWith(prefix)
@@ -222,17 +222,17 @@ switch (command) {
 
 case 'menu':
 jiren = `
-‚¨q©Ð©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¬ 
-‚©À        ¡¸ Bug Menu ¡¹
-‚©À©Ð©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¬ 
-‚©À ? ${prefix}turu1 (Akses Bot)
-‚¨q©Ð©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¬ 
-‚©À ? ${prefix}bugstc (AKSES OWNER)
-‚©À ? ${prefix}buglog (AKSES OWNER)
-‚©À ? ${prefix}bugtem (AKSES OWNER)
-‚©À©Ð©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¬ 
-‚©À CREATE BY NODEJS
-‚©À©Ð©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¤©¬ `
+=====â€¢=================================== 
+====        == Bug Menu ==
+=====â€¢=================================== 
+==== > ${prefix}turu1 (Akses Bot)
+=====â€¢=================================== 
+==== > ${prefix}bugstc (AKSES OWNER)
+==== > ${prefix}buglog (AKSES OWNER)
+==== > ${prefix}bugtem (AKSES OWNER)
+=====â€¢=================================== 
+==== CREATE BY NODEJS
+=====â€¢=================================== `
 diablobotwhatsapp.reply(jiren)
 break
 
