@@ -8,7 +8,6 @@ const os = require('os')
 const { color, bgcolor } = require('./lib/color')
 const { uptotelegra } = require('./scrape/upload')
 const tiktok = require('./scrape/tiktok')
-const yts = require('./scrape/yt-search')
 const audionye = fs.readFileSync('./y.mp3')
 const owner = JSON.parse(fs.readFileSync('./database/owner.json').toString())
 
