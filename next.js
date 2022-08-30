@@ -62,34 +62,6 @@ require('./diablo')(diablo, diablobotwhatsapp, chatUpdate, store)
 } catch (err) {
 console.log(err)}})
 
-diablo.ev.on('group-participants.update', async (anu) => {
-        console.log(anu)
-        try {
-            let metadata = await diablo.groupMetadata(anu.id)
-            let participants = anu.participants
-            let memb = metadata.participants.length
-            for (let num of participants) {
-                try {
-                    ppuser = await diablo.profilePictureUrl(num, 'image')
-                } catch {
-                    ppuser = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-                }
-                try {
-                    ppgroup = await diablo.profilePictureUrl(anu.id, 'image')
-                } catch {
-                    ppgroup = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-                }
-                if (anu.action == 'add') {
-                    diablo.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Hello Sis @${num.split("@")[0]}, Welcome To The Group ${metadata.subject}, I Hope You Enjoy It, Sis` })
-                } else if (anu.action == 'remove') {
-                    diablo.sendMessage(anu.id, { image: { url: ppuser }, contextInfo: { mentionedJid: [num] }, caption: `Goodbye Sis @${num.split("@")[0]}, I Hope You Feel At Home In Nature` })
-                }
-            }
-        } catch (err) {
-            console.log(err)
-        }
-    })
-
 diablo.decodeJid = (jid) => {
 if (!jid) return jid
 if (/:\d+@/gi.test(jid)) {
