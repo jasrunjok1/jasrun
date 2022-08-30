@@ -1,5 +1,5 @@
 {
-  "name": "KirBotz-Ganteng",
+  "name": "Diablo-Botz",
   "version": "1.2.3",
   "description": "Jangan Ubah Nama Di Atas",
   "main": "next.js",
@@ -18,7 +18,7 @@
     "bot-md",
     "multi-device"
   ],
-  "author": "Akira",
+  "author": "Grizly9",
   "license": "MIT",
   "dependencies": {
     "@adiwajshing/baileys": "^4.3.0",
