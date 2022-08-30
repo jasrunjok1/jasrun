@@ -1,19 +1,21 @@
-FROM node:lts-buster
+FROM node:16.10.0-buster
 
 RUN apt-get update && \
   apt-get install -y \
+  neofetch \
+  chromium \
   ffmpeg \
+  wget \
   imagemagick \
-  webp && \
-  apt-get upgrade -y && \
+  graphicsmagick \
+  webp \
+  mc && \
   rm -rf /var/lib/apt/lists/*
 
 COPY package.json .
-
-RUN npm install && npm install pm2 -g 
-
+RUN npm install -g npm@8.1.3
+RUN npm install -g pm2
+RUN npm update
 COPY . .
-
-EXPOSE 5000
-
-CMD ["npm", "start"]
+RUN pm2 save
+CMD ["pm2-runtime", "next.js"]`
