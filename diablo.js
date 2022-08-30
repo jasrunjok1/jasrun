@@ -256,7 +256,22 @@ jiren = `
 `
 diablobotwhatsapp.reply(jiren)
 break
-case 'ping':{
+case 'restart':{
+if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
+ let cp = require('child_process')
+let { promisify } = require('util')
+let exec = promisify(cp.exec).bind(cp)
+  let o
+  try {
+  o = exec('pm2 restart all')
+  } catch (e) {
+  o = e
+ } finally {
+let { stdout, stderr } = o
+}
+}
+break
+case 'stats':{
 const used = process.memoryUsage()
 const cpus = os.cpus().map(cpu => {
 cpu.total = Object.keys(cpu.times).reduce((last, type) => last + cpu.times[type], 0)
